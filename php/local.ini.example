@@ -1,0 +1,30 @@
+date.timezone = "Asia/Taipei"
+#禁用遠程URL的文件處理，以防Remote File Inclusion (RFI)攻擊
+allow_url_fopen = Off
+allow_url_include = Off
+#上傳大小限制
+upload_max_filesize = 200M #單一檔案上傳上限
+post_max_size = 200M #POST最大上限
+#upload_tmp_dir = "" 上傳的暫存資料夾，不指定則預設存在 /tmp 裡
+memory_limit = 16M #記憶體上限
+max_execution_time = 30 #執行時間上限（秒）
+max_input_time = 60 #輸入資料時間上限（秒）
+default_socket_timeout= 600 #等待逾時（秒）
+#輸出暫存
+output_buffering = Off
+#禁用Register_Globals
+register_globals = Off
+#配置錯誤記錄
+display_errors = Off #在網頁顯示錯誤訊息，在正式主機建設為 Off
+display_startup_errors = Off #記錄起始錯誤，如module載入時
+log_errors = On #將錯誤記在log檔裡
+error_reporting = E_ALL #指定哪些錯誤類型須要記錄，如下表:
+###
+#E_ALL	全部的訊息都要記錄
+#E_ERROR	嚴重錯誤，造成程式無法執行
+#E_WARNING	錯誤，旦程式可以繼續往下執行，例如某些舊的函式語法，版本較新的已經停用不支援。
+#E_PARSE	編譯錯誤
+#E_NOTICE	提醒，例如變數不存在旦卻對其取值，比如說 echo $a，旦之前並未設定過 $a 的值為何。
+#E_ERROR & E_WARNING	用&符號可以複選需要記錄的錯誤，例如 E_ERROR 和 E_WARNING
+#E_ALL & ~E_NOTICE	記錄Notice以外的記錄 (即全部都記錄下來，旦不包含Notice)
+###
